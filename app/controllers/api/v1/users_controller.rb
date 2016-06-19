@@ -5,7 +5,6 @@ module Api
       def show
         render json: User.find(params[:id]), include: ['diagnoses', 'entries']
       end
-
     end
   end
 end
