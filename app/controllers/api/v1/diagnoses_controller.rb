@@ -3,8 +3,9 @@ module Api
     class DiagnosesController < ApplicationController
 
       def show
-        # render json: Diagnosis.find(params[:id]), include: ['entries']
-        render json: {data: Diagnosis.metadata(Diagnosis.find(params[:id]))}
+        render json: Diagnosis.find(params[:id]), include: ['entries']
+        #render json: {data: Diagnosis.metadata(Diagnosis.find(params[:id]))}
+        binding.pry
       end
 
       def create
