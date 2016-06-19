@@ -1,8 +1,8 @@
-bob = User.create(name: "Bob")
-linda = User.create(name: "Linda")
-tina = User.create(name: "Tina")
-louise = User.create(name: "Louise")
-gene = User.create(name: "Gene")
+bob = User.create(name: "Bob", email: "bob@bobsburgers.com", password: "password")
+linda = User.create(name: "Linda", email: "linda@bobsburgers.com", password: "password")
+tina = User.create(name: "Tina", email: "tina@bobsburgers.com", password: "password")
+louise = User.create(name: "Louise", email: "louise@bobsburgers.com", password: "password")
+gene = User.create(name: "Gene", email: "gene@bobsburgers.com", password: "password")
 
 fibro = Diagnosis.create(user: linda, diagnosis: "Fibromyalgia")
 back = Diagnosis.create(user: bob, diagnosis: "Back sprain")

@@ -1,7 +1,6 @@
 class ApplicationController < ActionController::API
+  include Knock::Authenticable
 
-  # helper method def current_user
-  #   User.find(session[:user_id])
-  # end
+  #before_action :authenticate
 
 end
