@@ -3,7 +3,7 @@ module Api
     class DiagnosesController < ApplicationController
 
       def index
-        binding.pry
+        # binding.pry
         render json: Diagnosis.metadata(current_user)
       end
 

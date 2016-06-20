@@ -3,8 +3,8 @@ class Entry < ApplicationRecord
   before_save :generate_timestamp
 
   def generate_timestamp
-    time = DateTime.now
-    self.time = time.strftime('%FT%T%')
+    t = DateTime.now.strftime('%F')
+    self.time = "new Date(#{t})"
   end
 
 end
