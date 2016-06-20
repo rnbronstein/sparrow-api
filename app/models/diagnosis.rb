@@ -11,7 +11,7 @@ class Diagnosis < ApplicationRecord
 
   def metadata
     Entry.where(diagnosis: self).map do |entry|
-      {label: self.diagnosis, time: entry.time, value: entry.value}
+      {label: self.diagnosis, date: entry.time, value: entry.value}
     end
   end
 end
