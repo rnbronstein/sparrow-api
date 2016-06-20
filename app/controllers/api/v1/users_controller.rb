@@ -3,7 +3,7 @@ module Api
     class UsersController < ApplicationController
 
       def show
-        render json: User.find(params[:id]), include: ['diagnoses', 'entries']
+        #render json: User.find(params[:id]), include: ['diagnoses', 'entries']
       end
 
       def create
