@@ -3,7 +3,7 @@ module Api
     class CurrentUserController < ApplicationController
 
       def show
-        render json: current_user, root: 'user', adapter: :json_api
+        render json: current_user, root: 'users', adapter: :json_api
       end
 
     end

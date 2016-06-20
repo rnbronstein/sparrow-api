@@ -5,9 +5,9 @@ Rails.application.routes.draw do
       get '/visualization', to: 'diagnoses#index'
       resources :users
       mount Knock::Engine => "/knock"
-      # resources :diagnoses do
-      #   resources :entries, except: [:create]
-      # end
+      resources :diagnoses do
+        resources :entries, except: [:create]
+      end
       resources :entries, only: [:create]
     end
   end
