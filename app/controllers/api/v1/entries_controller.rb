@@ -3,11 +3,17 @@ module Api
     class EntriesController < ApplicationController
 
       def index
-        render json: Entry.all
+        #binding.pry
+        render json: Entry.all_entries_for_user(current_user), include: ['diagnosis']
       end
 
       def create
         Entry.create(entry_params)
+      end
+
+      def update
+        entry = Entry.find(entry_params[:id])
+        entry.save(entry_params)
       end
 
       private
