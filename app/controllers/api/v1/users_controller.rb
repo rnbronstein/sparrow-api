@@ -1,9 +1,10 @@
 module Api
   module V1
     class UsersController < ApplicationController
+      skip_before_filter :authenticate_user, only: [:show]
 
       def show
-        #render json: User.find(params[:id]), include: ['diagnoses', 'entries']
+        render json: User.find(params[:id]), include: ['diagnoses', 'entries']
       end
 
       def create

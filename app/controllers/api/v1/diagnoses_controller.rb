@@ -2,9 +2,13 @@ module Api
   module V1
     class DiagnosesController < ApplicationController
 
-      def index
+      def visualization
         # binding.pry
         render json: Diagnosis.metadata(current_user)
+      end
+
+      def index
+        render json: Diagnosis.where(user: current_user)
       end
 
       def show

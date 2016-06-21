@@ -8,12 +8,14 @@ module Api
       end
 
       def create
-        Entry.create(entry_params)
+        entry = Entry.new(entry_params)
+        entry.diagnosis = Diagnosis.find(entry_params)
+        entry.save
       end
 
       def update
         entry = Entry.find(entry_params[:id])
-        entry.save(entry_params)
+        entry.update(value: entry_params["values"])
       end
 
       private

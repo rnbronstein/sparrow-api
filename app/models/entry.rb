@@ -1,6 +1,6 @@
 class Entry < ApplicationRecord
   belongs_to :diagnosis
-  before_create :generate_timestamp
+  # before_create :generate_timestamp
 
   def generate_timestamp
     time = DateTime.now
@@ -11,7 +11,8 @@ class Entry < ApplicationRecord
     diagnoses = Diagnosis.where(user: user)
     entry_records = []
     diagnoses.each do |diagnosis|
-      diagnosis.entries.each do |entry|
+      all_entries = diagnosis.entries.order(time: :desc)
+      all_entries.each do |entry|
         entry_records << entry
       end
     end
