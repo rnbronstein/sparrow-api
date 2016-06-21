@@ -1,6 +1,6 @@
 class Entry < ApplicationRecord
   belongs_to :diagnosis
-  before_save :generate_timestamp
+  before_create :generate_timestamp
 
   def generate_timestamp
     time = DateTime.now

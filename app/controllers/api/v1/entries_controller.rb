@@ -11,6 +11,11 @@ module Api
         Entry.create(entry_params)
       end
 
+      def update
+        entry = Entry.find(entry_params[:id])
+        entry.save(entry_params)
+      end
+
       private
 
       def entry_params
