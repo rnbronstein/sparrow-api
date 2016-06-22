@@ -14,8 +14,13 @@ module Api
       end
 
       def update
+        binding.pry
         entry = Entry.find(entry_params[:id])
-        entry.update(value: entry_params["values"])
+        diagnosis = Diagnosis.find(entry_params[:diagnosis_id])
+        diagnosis.diagnosis = entry_params[:diagnosis]
+        entry.diagnosis = diagnosis
+        entry.value = entry_params[:value]
+        entry.save
       end
 
       private

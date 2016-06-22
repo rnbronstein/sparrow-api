@@ -15,7 +15,10 @@ module Api
         render json: Diagnosis.find(params[:id]), include: ['entries']
       end
 
-
+      def update
+        binding.pry
+      end
+      
       def create
         Diagnosis.create(diagnosis_params)
       end
